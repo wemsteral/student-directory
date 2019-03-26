@@ -14,7 +14,7 @@ def print_menu
   puts "3. Search student by first letter of name"
   puts "4. Save students"
   puts "5. Load students"
-  puts "9. Exit"
+  puts "6. Exit"
 end
 
 def process(selection)
@@ -29,7 +29,7 @@ def process(selection)
     save_students
   when "5"
     load_students
-  when "9"
+  when "6"
     exit
   else
     puts "I don't know what you meant, try again"

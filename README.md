@@ -29,6 +29,13 @@
 The student directory script allows you to manage the list of students enrolled
 at The Academy.
 
+1. Input students
+2. Show students
+3. Search student by first letter of name
+4. Save students
+5. Load students
+6. Exit
+
 ## How to use ##
 
 ```ruby directory.rb```
