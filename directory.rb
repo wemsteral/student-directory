@@ -13,6 +13,7 @@ def print_menu
   puts "2. Show the students"
   puts "3. Search student by first letter of name"
   puts "4. Save students"
+  puts "5. Load students"
   puts "9. Exit"
 end
 
@@ -26,6 +27,8 @@ def process(selection)
     name_by_letter
   when "4"
     save_students
+  when "5"
+    load_students
   when "9"
     exit
   else
@@ -45,8 +48,8 @@ def print_students_list
 end
 
 def print_footer
-  if @students.length < 0
-  puts "We don not have any students"
+  if @students.length == 0
+  puts "We do not have any students"
   elsif @students.length == 1
   puts "Overall we have #{@students.count} great student"
   else
@@ -87,7 +90,16 @@ def save_students
     file.puts csv_line
   end
   file.close
-end 
+end
+
+def load_students
+  file = File.open("students.csv", "r")
+  file.readlines.each do |line|
+    name, cohort = line.chomp.split(",")
+    @students << {name: name, cohort: cohort.to_sym}
+  end
+  file.close
+end
 
 # name by first letter method
 
